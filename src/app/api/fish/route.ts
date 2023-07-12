@@ -1,6 +1,7 @@
 import {NextRequest, NextResponse} from "next/server";
 import {prisma} from "@/app/api/db";
 import {descriptions, firstName, lastName, intrests, picture} from ".prisma/client";
+import {randomIntFromInterval} from "@/app/random";
 
 export type fish = {
     firstname: firstName,
@@ -11,7 +12,11 @@ export type fish = {
 }
 
 export async function GET(request:NextRequest) {
-    return NextResponse.json(GetFish)
+    console.log("got fish")
+    let fish = await GetFish();
+    if(fish != undefined) {
+        return NextResponse.json(fish)
+    }
 }
 
 export async function GetFish() {
@@ -45,6 +50,3 @@ function randomIntrests(intrests:intrests[]) {
 }
 
 
-export function randomIntFromInterval(min:number, max:number) { // min and max included
-    return Math.floor(Math.random() * (max - min + 1) + min)
-}
