@@ -25,7 +25,7 @@ export  function Profile() {
         }
     },[]);
     let onCatch = () => {
-        
+
     }
     let onRelease = () => {
 
