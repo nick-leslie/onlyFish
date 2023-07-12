@@ -9,8 +9,6 @@ export async function GetFish() {
     })
     let description = await prisma.descriptions.findMany({
     })
-    let intrests = await prisma.intrests.findMany({
-    })
     let pictures = await prisma.picture.findMany({
     })
     let finalFish:fish = { } as fish

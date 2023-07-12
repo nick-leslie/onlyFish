@@ -8,6 +8,7 @@ import Catch from "@/app/components/catch";
 import Release from "@/app/components/Release";
 import {useEffect, useState} from "react";
 import {ProfileLoading} from "@/app/components/profile/ProfileLoading";
+import {router} from "next/client";
 export  function Profile() {
     let [fish, setFish] = useState<fish | undefined>(undefined)
     let [loadting,setLoading] = useState(true);
@@ -25,10 +26,10 @@ export  function Profile() {
         }
     },[]);
     let onCatch = () => {
-
+        window.location.reload();
     }
     let onRelease = () => {
-
+        window.location.reload();
     }
 
     if(!loadting) {
