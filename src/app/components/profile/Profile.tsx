@@ -51,7 +51,7 @@ export  function Profile() {
                                 <h1 className={"mx-5 place-self-end font-bold text-3xl "}>{randomIntFromInterval(20, 100)}</h1>
                             </div>
                             <div className={"flex flex-row"}>
-                                <h1 className={"mx-3 font-bold  text-3xl place-self-end"}>{fish.firstname.gender == "MALE" ? "man" : "woman"}</h1>
+                                <h1 className={"mx-3 font-bold  text-3xl place-self-end"}>{fish.firstname.gender == "MALE" ? "slutty fish" : "fishy slut"}</h1>
                             </div>
                         </div>
                         <h1 className={"mx-5 text-xl my-5 tracking-wide"}>
