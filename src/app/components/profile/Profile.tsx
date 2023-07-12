@@ -14,7 +14,8 @@ export  function Profile() {
     let [loadting,setLoading] = useState(true);
     let getData = async  () => {
         let fishResponce = await fetch(window.location.origin + "/api/fish", {
-            method: "GET"
+            method: "GET",
+            cache: 'no-store'
         })
         setFish(await fishResponce.json())
         setLoading(false);
