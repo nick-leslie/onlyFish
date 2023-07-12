@@ -3,7 +3,7 @@ import {prisma} from "@/app/api/db";
 import {descriptions, firstName, lastName, intrests, picture} from ".prisma/client";
 import {randomIntFromInterval} from "@/app/random";
 import {GetFish} from "@/app/api/fish/GetFish";
-
+export const fetchCache = 'force-no-store';
 export type fish = {
     firstname: firstName,
     lastname: lastName
