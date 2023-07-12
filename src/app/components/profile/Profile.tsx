@@ -12,24 +12,28 @@ import {router} from "next/client";
 export  function Profile() {
     let [fish, setFish] = useState<fish | undefined>(undefined)
     let [loadting,setLoading] = useState(true);
+    let getData = async  () => {
+        let fishResponce = await fetch(window.location.origin + "/api/fish", {
+            method: "GET"
+        })
+        setFish(await fishResponce.json())
+        setLoading(false);
+    }
     useEffect(() => {
-        let getData = async  () => {
-            let fishResponce = await fetch(window.location.origin + "/api/fish", {
-                method: "GET"
-            })
-            setFish(await fishResponce.json())
-            setLoading(false);
-        }
+
         getData()
         return () => {
 
         }
     },[]);
     let onCatch = () => {
-        window.location.reload();
+        setLoading(true)
+        getData()
+
     }
     let onRelease = () => {
-        window.location.reload();
+        setLoading(true)
+        getData()
     }
 
     if(!loadting) {
