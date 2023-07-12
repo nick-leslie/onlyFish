@@ -18,7 +18,7 @@ export async function GetFish() {
         finalFish.firstname = firstname[randomIntFromInterval(0,firstname.length-1)];
         finalFish.lastname = lastName[randomIntFromInterval(0,lastName.length-1)];
         finalFish.desciption = description[randomIntFromInterval(0,description.length-1)];
-        finalFish.intrests = randomIntrests(intrests)
+        finalFish.intrests = []
         finalFish.pictrue = pictures[randomIntFromInterval(0,pictures.length-1)];
         return  finalFish
     }
