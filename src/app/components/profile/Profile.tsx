@@ -9,11 +9,12 @@ import Release from "@/app/components/Release";
 import {useEffect, useState} from "react";
 import {ProfileLoading} from "@/app/components/profile/ProfileLoading";
 import {router} from "next/client";
+import {random} from "nanoid";
 export  function Profile() {
     let [fish, setFish] = useState<fish | undefined>(undefined)
     let [loadting,setLoading] = useState(true);
     let getData = async  () => {
-        let fishResponce = await fetch(window.location.origin + "/api/fish", {
+        let fishResponce = await fetch(window.location.origin + "/api/fish/"+random(1), {
             method: "GET",
             cache: 'no-store'
         })
