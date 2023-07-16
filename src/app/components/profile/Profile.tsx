@@ -1,5 +1,5 @@
 "use client"
-import {fish} from "@/app/api/fish/route";
+import {fish} from "@/app/api/fish/[id]/route";
 import {randomIntFromInterval} from "@/app/random";
 import Image from "next/image";
 import heartIcon from "../../../../public/Heart.svg"
