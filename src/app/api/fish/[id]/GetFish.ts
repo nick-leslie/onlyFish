@@ -1,6 +1,6 @@
 import {prisma} from "@/app/api/db";
 import {randomIntFromInterval} from "@/app/random";
-import {fish} from "@/app/api/fish/route";
+import {fish} from "@/app/api/fish/[id]/route";
 
 export async function GetFish() {
     let firstname = await prisma.firstName.findMany({
